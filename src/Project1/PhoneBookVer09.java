@@ -1,6 +1,6 @@
 package Project1;
-import ver09.PhoneInfo;
-import ver09.PhoneBookManager;
+import Project1.ver09.PhoneBookManager;
+import Project1.ver09.PhoneInfo;
 
 public class PhoneBookVer09 {
 

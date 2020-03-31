@@ -1,5 +1,5 @@
 package Project1;
-import ver01.PhoneInfo;
+import Project1.ver01.PhoneInfo;
 
 public class PhoneBookVer01 {
 

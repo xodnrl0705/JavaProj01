@@ -1,5 +1,5 @@
 package Project1;
-import ver07.PhoneBookManager;
+import Project1.ver07.PhoneBookManager;
 
 public class PhoneBookVer07 {
 

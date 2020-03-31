@@ -1,6 +1,7 @@
 package Project1;
 import java.util.Scanner;
-import ver02.PhoneInfo;
+
+import Project1.ver02.PhoneInfo;
 
 public class PhoneBookVer02 {
 
