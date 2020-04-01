@@ -53,7 +53,7 @@ public class PhoneBookManager extends ConnectDB{
 		
 		try {
 			//1.쿼리문준비
-			String query = "INSERT INTO phonebook_tb VALUES (?, ?, ?)";
+			String query = "INSERT INTO phonebook_tb VALUES (seq_phonebook.nextval,?, ?, ?)";
 			
 			//2.prepared객체 생성
 			psmt = con.prepareStatement(query);
@@ -114,18 +114,20 @@ public class PhoneBookManager extends ConnectDB{
 			
 			stmt = con.createStatement();
 	         
-	        String query = "SELECT name, phone_num, birth from phonebook_tb "
+	        String query = "SELECT * from phonebook_tb "
 	        		+ " Where name like '" + searchName + "'";
 	        rs = stmt.executeQuery(query);
 	        
 	        while(rs.next()) {
 	        	
-	        	String name = rs.getString(1);//employee_id컬럼
-				String phone = rs.getString(2);//컬럼명을 그대로 이용함
-				String birth = rs.getString(3);
+	        	int indexNumber = rs.getInt(1);
+	        	String name = rs.getString(2);
+				String phone = rs.getString(3);
+				String birth = rs.getString(4);
 				
-				System.out.printf("%s %s %s%n",
-						name, phone, birth);
+				System.out.println("번호\t이름\t전화번호\t생일\t");
+				System.out.printf("%d\t %s\t %s\t %s%n",
+						indexNumber,name, phone, birth);
 	      
 	         }
 	      }
@@ -145,12 +147,14 @@ public class PhoneBookManager extends ConnectDB{
 	        rs = stmt.executeQuery(query);
 	        
 	        while(rs.next()) {
-	        	String name = rs.getString(1);//employee_id컬럼
-				String phone = rs.getString(2);//컬럼명을 그대로 이용함
-				String birth = rs.getString(3);
+	        	int indexNumber = rs.getInt(1);
+	        	String name = rs.getString(2);
+				String phone = rs.getString(3);
+				String birth = rs.getString(4);
 				
-				System.out.printf("%s %s %s%n",
-						name, phone, birth);
+				System.out.println("번호\t이름\t전화번호\t생일\t");
+				System.out.printf("%d\t %s\t %s\t %s%n",
+						indexNumber,name, phone, birth);
 	         }
 	      }
 	      catch (SQLException e) {
