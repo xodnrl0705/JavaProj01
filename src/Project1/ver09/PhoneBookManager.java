@@ -42,7 +42,7 @@ public class PhoneBookManager extends ConnectDB{
 				break;
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
-				close();
+				//close();
 				return;
 			}
 		}
